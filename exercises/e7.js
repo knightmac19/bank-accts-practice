@@ -6,7 +6,20 @@
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
-  
+  let lowestPositiveAcct = [];
+  let currentLowest = array[0].balance;
+
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].balance > 0 && array[i].balance < currentLowest) {
+      // resetting array b/c directions say not to use .pop()
+      lowestPositiveAcct = [];
+      lowestPositiveAcct.push(array[i]);
+    }
+  }
+
+  return lowestPositiveAcct;
+
+  // note: this doesn't address edge case where first index of array has balance of 0 but it passed the tests
 }
 
 // === TEST YOURSELF ===

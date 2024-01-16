@@ -5,6 +5,20 @@
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
 
+  // first create the array of all numbers between 0 & max
+  let allArr = [];
+  for (var i = 0; i < max; i++) {
+    allArr.push(i);
+  }
+
+  let squaresArr = [];
+  for (var i = 0; i < allArr.length; i++) {
+    if (allArr[i] * allArr[i] > max) {
+      return squaresArr;
+    } else {
+      squaresArr.push(allArr[i] * allArr[i]);
+    }
+  }
 }
 
 // === TEST YOURSELF ===
